@@ -9,4 +9,4 @@ pkill gunicorn || true
 cd $APP_DIR
 
 # Run app in background with gunicorn
-nohup gunicorn -b 0.0.0.0:80 app:app > app.log 2>&1 &
+sudo nohup gunicorn -b 0.0.0.0:80 app:app > app.log 2>&1 &
