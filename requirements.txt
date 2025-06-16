@@ -1,4 +1,2 @@
-flask==1.1.2
+flask
 gunicorn
-jinja2<3.1
-markupsafe<2.1
