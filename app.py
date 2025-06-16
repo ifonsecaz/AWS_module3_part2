@@ -9,6 +9,10 @@ app = Flask("Hello World")
 def hello_world():
     return "Hello, World!"
 
+@app.route("/good-day")
+def hello_world():
+    return "Hi, good day!"
+
 @app.route("/hello/json")
 def hello_world_json():
     resp = make_response({"message": "Hello World"})
