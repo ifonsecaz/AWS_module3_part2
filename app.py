@@ -9,8 +9,8 @@ app = Flask("Hello World")
 def hello_world():
     return "Hello, World!"
 
-@app.route("/good-day")
-def hello_world():
+@app.route("/good_day")
+def good_day():
     return "Hi, good day!"
 
 @app.route("/hello/json")
