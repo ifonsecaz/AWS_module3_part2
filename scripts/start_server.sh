@@ -23,7 +23,7 @@ echo "[start_server.sh] Current directory: $(pwd)" >> /tmp/deploy_debug.log
 echo "[start_server.sh] Running gunicorn..." >> /tmp/deploy_debug.log
 
 # Run app in background with gunicorn
-nohup gunicorn -b 0.0.0.0:8080 app:app > app.log 2>&1 &
+nohup python3 -m gunicorn -b 0.0.0.0:8080 app:app > app.log 2>&1 &
 
 sleep 2
 
