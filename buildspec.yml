@@ -4,6 +4,7 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - pip install --upgrade pip
       - pip install -r requirements.txt
   build:
     commands:
@@ -11,6 +12,7 @@ phases:
   post_build:
     commands:
       - echo Ready to deploy
+      - pip freeze > installed.txt
 artifacts:
   files:
     - '**/*'
