@@ -1,2 +1,6 @@
 flask
 gunicorn
+jinja2<3.0
+markupsafe<2.0
+itsdangerous<2.0
+click<8.0
