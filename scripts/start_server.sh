@@ -14,6 +14,8 @@ cd $APP_DIR || {
   exit 1
 }
 
+GUNICORN_BIN="/home/ec2-user/.local/bin/gunicorn"
+
 echo "[start_server.sh] Current directory: $(pwd)" >> /tmp/deploy_debug.log
 echo "[start_server.sh] Running gunicorn..." >> /tmp/deploy_debug.log
 
