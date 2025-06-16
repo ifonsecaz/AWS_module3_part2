@@ -8,6 +8,9 @@ hooks:
     - location: scripts/install_dependencies.sh
       timeout: 300
       runas: ec2-user
+    - location: scripts/permissions.sh
+      timeout: 60
+      runas: ec2-user
   AfterInstall:
     - location: scripts/start_server.sh
       timeout: 60
