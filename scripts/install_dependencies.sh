@@ -11,4 +11,4 @@ sudo yum install python3-pip -y
 # source venv/bin/activate
 
 # Install dependencies
-pip3 install -r requirements.txt
+sudo pip3 install -r requirements.txt
