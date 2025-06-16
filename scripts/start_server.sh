@@ -8,13 +8,16 @@ APP_DIR="/home/ec2-user/flask-app"
 # Kill any running Flask app
 pkill gunicorn || true
 
+export PATH=$PATH:/home/ec2-user/.local/bin
+echo "path exported $PATH" >> /tmp/deploy_debug.log
+
 # Move to app directory
 cd $APP_DIR || {
   echo "[start_server.sh] Failed to cd to $APP_DIR" >> /tmp/deploy_debug.log
   exit 1
 }
 
-GUNICORN_BIN="/home/ec2-user/.local/bin/gunicorn"
+#GUNICORN_BIN="/home/ec2-user/.local/bin/gunicorn"
 
 echo "[start_server.sh] Current directory: $(pwd)" >> /tmp/deploy_debug.log
 echo "[start_server.sh] Running gunicorn..." >> /tmp/deploy_debug.log
