@@ -6,7 +6,12 @@ echo "[start_server.sh] Starting script..." >> /tmp/deploy_debug.log
 APP_DIR="/home/ec2-user/flask-app"
 
 # Kill any running Flask app
-pkill gunicorn || true
+PORT=8080
+PID=$(lsof -t -i:$PORT)
+if [ -n "$PID" ]; then
+  echo "Killing process on port $PORT: PID $PID"
+  kill -9 $PID
+fi
 
 export PATH=$PATH:/home/ec2-user/.local/bin
 echo "path exported $PATH" >> /tmp/deploy_debug.log
